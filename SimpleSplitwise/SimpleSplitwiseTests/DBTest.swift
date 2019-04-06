@@ -35,7 +35,7 @@ class DBTest: XCTestCase {
         let firt = allFriend?.first
         let last = allFriend?.last
         
-        XCTAssert(firt?.name == nameA, "data error 2")
+        XCTAssert(firt?.name == nameA, "data error 1")
         XCTAssert(last?.name == nameB, "data error 2")
         
     }

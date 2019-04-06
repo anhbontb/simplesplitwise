@@ -29,6 +29,11 @@
 		22319779225891B400F71F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22319778225891B400F71F20 /* Assets.xcassets */; };
 		2231977C225891B400F71F20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2231977A225891B400F71F20 /* LaunchScreen.storyboard */; };
 		2265B7CA2258BAE100CD92DD /* SWFriendTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223197F12258A0F400F71F20 /* SWFriendTable.swift */; };
+		2265B7E92258C0ED00CD92DD /* SWFriendPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7E82258C0ED00CD92DD /* SWFriendPickerViewController.swift */; };
+		2265B7EB2258C12D00CD92DD /* SWFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7EA2258C12D00CD92DD /* SWFriend.swift */; };
+		2265B7EE2258C5DB00CD92DD /* SWFriendPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */; };
+		2265B7F02258C66600CD92DD /* SWFriendPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7EF2258C66600CD92DD /* SWFriendPickerData.swift */; };
+		2265B7F32258CD6800CD92DD /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7F22258CD6800CD92DD /* UITableView+Extension.swift */; };
 		22DDFCFF2258B09200175447 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFCFE2258B09200175447 /* RealmHelper.swift */; };
 		22DDFD022258B13000175447 /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFD012258B13000175447 /* DBTest.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +72,11 @@
 		223197E72258A01600F71F20 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/Static/SnapKit.framework; sourceTree = "<group>"; };
 		223197E82258A01600F71F20 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/Static/RxCocoa.framework; sourceTree = "<group>"; };
 		223197F12258A0F400F71F20 /* SWFriendTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendTable.swift; sourceTree = "<group>"; };
+		2265B7E82258C0ED00CD92DD /* SWFriendPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerViewController.swift; sourceTree = "<group>"; };
+		2265B7EA2258C12D00CD92DD /* SWFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriend.swift; sourceTree = "<group>"; };
+		2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerModel.swift; sourceTree = "<group>"; };
+		2265B7EF2258C66600CD92DD /* SWFriendPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerData.swift; sourceTree = "<group>"; };
+		2265B7F22258CD6800CD92DD /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		22DDFCFE2258B09200175447 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		22DDFD012258B13000175447 /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +139,8 @@
 		22319770225891B000F71F20 /* SimpleSplitwise */ = {
 			isa = PBXGroup;
 			children = (
+				2265B7F12258CD5100CD92DD /* Commonn */,
+				2265B7E72258C08F00CD92DD /* FriendPicker */,
 				22319771225891B000F71F20 /* AppDelegate.swift */,
 				22319773225891B000F71F20 /* ViewController.swift */,
 				22319775225891B000F71F20 /* Main.storyboard */,
@@ -178,10 +190,37 @@
 		223197F02258A0CA00F71F20 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				2265B7EC2258C15300CD92DD /* Friends */,
 				22DDFCFE2258B09200175447 /* RealmHelper.swift */,
-				223197F12258A0F400F71F20 /* SWFriendTable.swift */,
 			);
 			name = Database;
+			sourceTree = "<group>";
+		};
+		2265B7E72258C08F00CD92DD /* FriendPicker */ = {
+			isa = PBXGroup;
+			children = (
+				2265B7E82258C0ED00CD92DD /* SWFriendPickerViewController.swift */,
+				2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */,
+				2265B7EF2258C66600CD92DD /* SWFriendPickerData.swift */,
+			);
+			name = FriendPicker;
+			sourceTree = "<group>";
+		};
+		2265B7EC2258C15300CD92DD /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				2265B7EA2258C12D00CD92DD /* SWFriend.swift */,
+				223197F12258A0F400F71F20 /* SWFriendTable.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		2265B7F12258CD5100CD92DD /* Commonn */ = {
+			isa = PBXGroup;
+			children = (
+				2265B7F22258CD6800CD92DD /* UITableView+Extension.swift */,
+			);
+			name = Commonn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2265B7E92258C0ED00CD92DD /* SWFriendPickerViewController.swift in Sources */,
+				2265B7EE2258C5DB00CD92DD /* SWFriendPickerModel.swift in Sources */,
+				2265B7F32258CD6800CD92DD /* UITableView+Extension.swift in Sources */,
+				2265B7EB2258C12D00CD92DD /* SWFriend.swift in Sources */,
 				2265B7CA2258BAE100CD92DD /* SWFriendTable.swift in Sources */,
 				22319774225891B000F71F20 /* ViewController.swift in Sources */,
+				2265B7F02258C66600CD92DD /* SWFriendPickerData.swift in Sources */,
 				22DDFCFF2258B09200175447 /* RealmHelper.swift in Sources */,
 				22319772225891B000F71F20 /* AppDelegate.swift in Sources */,
 			);

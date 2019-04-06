@@ -9,19 +9,6 @@
 import Foundation
 import RealmSwift
 
-internal class SWFriend: Object {
-    @objc dynamic var name: String?
-    
-    override static func primaryKey() -> String? {
-        return "name"
-    }
-
-    public convenience init(name: String) {
-        self.init()
-        self.name = name
-    }
-}
-
 protocol SWFriendTableProtocol {
     func realmDB() -> Realm
     func getAllFriend() -> [SWFriend]?
@@ -45,5 +32,6 @@ extension SWFriendTableProtocol {
             realm.add(friend, update: true)
         }
     }
-  
 }
+
+class SWFriendTable: SWFriendTableProtocol{}
