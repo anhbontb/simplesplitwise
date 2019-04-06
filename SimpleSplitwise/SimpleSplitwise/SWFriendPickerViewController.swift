@@ -10,18 +10,11 @@ import UIKit
 import SnapKit
 import RxSwift
 
-fileprivate class SWFriendCell: UITableViewCell {
-    func setItem( _ friend: SWFriendPickerData) {
-        self.textLabel?.text = friend.name
-        self.accessoryType = friend.selected ? .checkmark : .none
-    }
-}
 
 class SWFriendPickerViewController: UIViewController {
     
     var tableView: UITableView!
-    var doneButton: UIButton!
-    var cancelButton: UIButton!
+    var bottomView: SWBottonActionView!
     
     let model = SWFriendPickerModel()
     var bag = DisposeBag()
@@ -31,10 +24,10 @@ class SWFriendPickerViewController: UIViewController {
         super.viewDidLoad()
         self.addActionButton()
         self.addTableView()
-        self.loadData()
+        self.reloadData()
     }
     
-    func loadData() {
+    func reloadData() {
         self.model.loadDataSource().subscribe(onNext: { [weak self] (data) in
             self?.reloadTableView(data)
         }).disposed(by: self.bag)
@@ -63,34 +56,22 @@ extension SWFriendPickerViewController {
         self.view.addSubview(table)
         table.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(0)
-            make.bottom.equalTo(self.doneButton.snp.top)
+            make.bottom.equalTo(self.bottomView.snp.top)
         }
     }
     
     func addActionButton() {
-        let doneButton = UIButton.defaultButton(R.donebtn)
-        let cancelButton = UIButton.defaultButton(R.cancelbtn)
-        self.view.addSubview(doneButton)
-        self.view.addSubview(cancelButton)
+        let bottomView = SWBottonActionView.view()
+        self.view.addSubview(bottomView)
         
-        let height = 100;
-        doneButton.snp.makeConstraints { (make) in
-            make.left.bottom.equalTo(0)
-            make.right.equalTo(self.view.snp.centerX)
+        let height = SWBottonActionView.height()
+        bottomView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(0)
             make.height.equalTo(height)
         }
-        
-        cancelButton.snp.makeConstraints { (make) in
-            make.right.bottom.equalTo(0)
-            make.left.equalTo(self.view.snp.centerX)
-            make.height.equalTo(height)
-        }
-        
-        doneButton.addTarget(self, action: #selector(doneButtonClick), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(cancelButtonClick), for: .touchUpInside)
-        
-        self.doneButton = doneButton
-        self.cancelButton = cancelButton
+        bottomView.doneButton.addTarget(self, action: #selector(doneButtonClick), for: .touchUpInside)
+        bottomView.cancelButton.addTarget(self, action: #selector(cancelButtonClick), for: .touchUpInside)
+        self.bottomView = bottomView
     }
 }
 
