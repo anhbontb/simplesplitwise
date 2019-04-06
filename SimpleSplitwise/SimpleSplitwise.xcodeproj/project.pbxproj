@@ -7,16 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222B798D2258A34D00BF1400 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E62258A01600F71F20 /* Realm.framework */; };
+		222B798E2258A34D00BF1400 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E22258A01600F71F20 /* RealmSwift.framework */; };
+		222B798F2258A34D00BF1400 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E42258A01600F71F20 /* RxAtomic.framework */; };
+		222B79902258A34D00BF1400 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E52258A01600F71F20 /* RxBlocking.framework */; };
+		222B79912258A34D00BF1400 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E82258A01600F71F20 /* RxCocoa.framework */; };
+		222B79922258A34D00BF1400 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E32258A01600F71F20 /* RxSwift.framework */; };
+		222B79932258A34D00BF1400 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E72258A01600F71F20 /* SnapKit.framework */; };
+		222B79952258A34D00BF1400 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222B79942258A34D00BF1400 /* RxTest.framework */; };
+		222B79972258A35800BF1400 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E22258A01600F71F20 /* RealmSwift.framework */; };
+		222B79982258A35800BF1400 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E42258A01600F71F20 /* RxAtomic.framework */; };
+		222B79992258A35800BF1400 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E52258A01600F71F20 /* RxBlocking.framework */; };
+		222B799A2258A35800BF1400 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E82258A01600F71F20 /* RxCocoa.framework */; };
+		222B799B2258A35800BF1400 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E32258A01600F71F20 /* RxSwift.framework */; };
+		222B799C2258A35900BF1400 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222B79942258A34D00BF1400 /* RxTest.framework */; };
+		222B799D2258A35900BF1400 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E72258A01600F71F20 /* SnapKit.framework */; };
+		222B799E2258A44600BF1400 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223197E62258A01600F71F20 /* Realm.framework */; };
 		22319772225891B000F71F20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22319771225891B000F71F20 /* AppDelegate.swift */; };
 		22319774225891B000F71F20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22319773225891B000F71F20 /* ViewController.swift */; };
 		22319777225891B000F71F20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22319775225891B000F71F20 /* Main.storyboard */; };
 		22319779225891B400F71F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22319778225891B400F71F20 /* Assets.xcassets */; };
 		2231977C225891B400F71F20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2231977A225891B400F71F20 /* LaunchScreen.storyboard */; };
-		22319787225891B400F71F20 /* SimpleSplitwiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22319786225891B400F71F20 /* SimpleSplitwiseTests.swift */; };
+		2265B7CA2258BAE100CD92DD /* SWFriendTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223197F12258A0F400F71F20 /* SWFriendTable.swift */; };
+		22DDFCFF2258B09200175447 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFCFE2258B09200175447 /* RealmHelper.swift */; };
+		22DDFD022258B13000175447 /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFD012258B13000175447 /* DBTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22319783225891B400F71F20 /* PBXContainerItemProxy */ = {
+		2265B7E52258BC2F00CD92DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22319766225891B000F71F20 /* Project object */;
 			proxyType = 1;
@@ -26,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222B79942258A34D00BF1400 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/Static/RxTest.framework; sourceTree = "<group>"; };
 		2231976E225891B000F71F20 /* SimpleSplitwise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSplitwise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22319771225891B000F71F20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22319773225891B000F71F20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +55,20 @@
 		22319782225891B400F71F20 /* SimpleSplitwiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSplitwiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22319786225891B400F71F20 /* SimpleSplitwiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSplitwiseTests.swift; sourceTree = "<group>"; };
 		22319788225891B400F71F20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		223197AB2258941200F71F20 /* carthage_build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = carthage_build.sh; sourceTree = "<group>"; };
+		223197AC2258941200F71F20 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		223197AD2258941200F71F20 /* carthage_checkout.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = carthage_checkout.sh; sourceTree = "<group>"; };
+		223197AE2258941200F71F20 /* carthage_update.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = carthage_update.sh; sourceTree = "<group>"; };
+		223197E22258A01600F71F20 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/Static/RealmSwift.framework; sourceTree = "<group>"; };
+		223197E32258A01600F71F20 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/Static/RxSwift.framework; sourceTree = "<group>"; };
+		223197E42258A01600F71F20 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/Static/RxAtomic.framework; sourceTree = "<group>"; };
+		223197E52258A01600F71F20 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/Static/RxBlocking.framework; sourceTree = "<group>"; };
+		223197E62258A01600F71F20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Static/Realm.framework; sourceTree = "<group>"; };
+		223197E72258A01600F71F20 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/Static/SnapKit.framework; sourceTree = "<group>"; };
+		223197E82258A01600F71F20 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/Static/RxCocoa.framework; sourceTree = "<group>"; };
+		223197F12258A0F400F71F20 /* SWFriendTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendTable.swift; sourceTree = "<group>"; };
+		22DDFCFE2258B09200175447 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		22DDFD012258B13000175447 /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +76,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222B799E2258A44600BF1400 /* Realm.framework in Frameworks */,
+				222B79972258A35800BF1400 /* RealmSwift.framework in Frameworks */,
+				222B79982258A35800BF1400 /* RxAtomic.framework in Frameworks */,
+				222B79992258A35800BF1400 /* RxBlocking.framework in Frameworks */,
+				222B799A2258A35800BF1400 /* RxCocoa.framework in Frameworks */,
+				222B799B2258A35800BF1400 /* RxSwift.framework in Frameworks */,
+				222B799C2258A35900BF1400 /* RxTest.framework in Frameworks */,
+				222B799D2258A35900BF1400 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +91,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222B79952258A34D00BF1400 /* RxTest.framework in Frameworks */,
+				222B798D2258A34D00BF1400 /* Realm.framework in Frameworks */,
+				222B798E2258A34D00BF1400 /* RealmSwift.framework in Frameworks */,
+				222B798F2258A34D00BF1400 /* RxAtomic.framework in Frameworks */,
+				222B79902258A34D00BF1400 /* RxBlocking.framework in Frameworks */,
+				222B79912258A34D00BF1400 /* RxCocoa.framework in Frameworks */,
+				222B79922258A34D00BF1400 /* RxSwift.framework in Frameworks */,
+				222B79932258A34D00BF1400 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				22319770225891B000F71F20 /* SimpleSplitwise */,
+				223197F02258A0CA00F71F20 /* Database */,
+				223197AA225893FE00F71F20 /* Carthage */,
 				22319785225891B400F71F20 /* SimpleSplitwiseTests */,
 				2231976F225891B000F71F20 /* Products */,
+				223197E12258A01600F71F20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,8 +144,44 @@
 			children = (
 				22319786225891B400F71F20 /* SimpleSplitwiseTests.swift */,
 				22319788225891B400F71F20 /* Info.plist */,
+				22DDFD012258B13000175447 /* DBTest.swift */,
 			);
 			path = SimpleSplitwiseTests;
+			sourceTree = "<group>";
+		};
+		223197AA225893FE00F71F20 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				223197AC2258941200F71F20 /* Cartfile */,
+				223197AB2258941200F71F20 /* carthage_build.sh */,
+				223197AD2258941200F71F20 /* carthage_checkout.sh */,
+				223197AE2258941200F71F20 /* carthage_update.sh */,
+			);
+			name = Carthage;
+			sourceTree = "<group>";
+		};
+		223197E12258A01600F71F20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				222B79942258A34D00BF1400 /* RxTest.framework */,
+				223197E62258A01600F71F20 /* Realm.framework */,
+				223197E22258A01600F71F20 /* RealmSwift.framework */,
+				223197E42258A01600F71F20 /* RxAtomic.framework */,
+				223197E52258A01600F71F20 /* RxBlocking.framework */,
+				223197E82258A01600F71F20 /* RxCocoa.framework */,
+				223197E32258A01600F71F20 /* RxSwift.framework */,
+				223197E72258A01600F71F20 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		223197F02258A0CA00F71F20 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				22DDFCFE2258B09200175447 /* RealmHelper.swift */,
+				223197F12258A0F400F71F20 /* SWFriendTable.swift */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +215,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				22319784225891B400F71F20 /* PBXTargetDependency */,
+				2265B7E62258BC2F00CD92DD /* PBXTargetDependency */,
 			);
 			name = SimpleSplitwiseTests;
 			productName = SimpleSplitwiseTests;
@@ -197,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2265B7CA2258BAE100CD92DD /* SWFriendTable.swift in Sources */,
 				22319774225891B000F71F20 /* ViewController.swift in Sources */,
+				22DDFCFF2258B09200175447 /* RealmHelper.swift in Sources */,
 				22319772225891B000F71F20 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,17 +296,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22319787225891B400F71F20 /* SimpleSplitwiseTests.swift in Sources */,
+				22DDFD022258B13000175447 /* DBTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22319784225891B400F71F20 /* PBXTargetDependency */ = {
+		2265B7E62258BC2F00CD92DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2231976D225891B000F71F20 /* SimpleSplitwise */;
-			targetProxy = 22319783225891B400F71F20 /* PBXContainerItemProxy */;
+			targetProxy = 2265B7E52258BC2F00CD92DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -291,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -362,15 +452,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 898EDDGZNP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+				);
 				INFOPLIST_FILE = SimpleSplitwise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-l\"stdc++\"",
+					"-l\"c++\"",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vng.com.zalopay.SimpleSplitwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -380,15 +479,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 898EDDGZNP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+				);
 				INFOPLIST_FILE = SimpleSplitwise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-l\"stdc++\"",
+					"-l\"c++\"",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vng.com.zalopay.SimpleSplitwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -397,8 +505,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 898EDDGZNP;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+				);
 				INFOPLIST_FILE = SimpleSplitwiseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -407,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vng.com.zalopay.SimpleSplitwiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleSplitwise.app/SimpleSplitwise";
@@ -418,8 +532,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 898EDDGZNP;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+				);
 				INFOPLIST_FILE = SimpleSplitwiseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +547,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vng.com.zalopay.SimpleSplitwiseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleSplitwise.app/SimpleSplitwise";
