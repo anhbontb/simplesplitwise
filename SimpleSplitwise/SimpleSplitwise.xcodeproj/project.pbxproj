@@ -34,6 +34,8 @@
 		2265B7EE2258C5DB00CD92DD /* SWFriendPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */; };
 		2265B7F02258C66600CD92DD /* SWFriendPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7EF2258C66600CD92DD /* SWFriendPickerData.swift */; };
 		2265B7F32258CD6800CD92DD /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7F22258CD6800CD92DD /* UITableView+Extension.swift */; };
+		2265B7F52258EC2800CD92DD /* ResoureString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7F42258EC2800CD92DD /* ResoureString.swift */; };
+		2265B7F72258ECB100CD92DD /* Button+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7F62258ECB100CD92DD /* Button+Extension.swift */; };
 		22DDFCFF2258B09200175447 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFCFE2258B09200175447 /* RealmHelper.swift */; };
 		22DDFD022258B13000175447 /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFD012258B13000175447 /* DBTest.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +79,8 @@
 		2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerModel.swift; sourceTree = "<group>"; };
 		2265B7EF2258C66600CD92DD /* SWFriendPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerData.swift; sourceTree = "<group>"; };
 		2265B7F22258CD6800CD92DD /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		2265B7F42258EC2800CD92DD /* ResoureString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResoureString.swift; sourceTree = "<group>"; };
+		2265B7F62258ECB100CD92DD /* Button+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Extension.swift"; sourceTree = "<group>"; };
 		22DDFCFE2258B09200175447 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		22DDFD012258B13000175447 /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				2265B7F22258CD6800CD92DD /* UITableView+Extension.swift */,
+				2265B7F62258ECB100CD92DD /* Button+Extension.swift */,
+				2265B7F42258EC2800CD92DD /* ResoureString.swift */,
 			);
 			name = Commonn;
 			sourceTree = "<group>";
@@ -332,7 +338,9 @@
 				22319774225891B000F71F20 /* ViewController.swift in Sources */,
 				2265B7F02258C66600CD92DD /* SWFriendPickerData.swift in Sources */,
 				22DDFCFF2258B09200175447 /* RealmHelper.swift in Sources */,
+				2265B7F52258EC2800CD92DD /* ResoureString.swift in Sources */,
 				22319772225891B000F71F20 /* AppDelegate.swift in Sources */,
+				2265B7F72258ECB100CD92DD /* Button+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

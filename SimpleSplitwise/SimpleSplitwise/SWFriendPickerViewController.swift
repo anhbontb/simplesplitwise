@@ -19,13 +19,17 @@ fileprivate class SWFriendCell: UITableViewCell {
 
 class SWFriendPickerViewController: UIViewController {
     
-    var tableView: UITableView?
+    var tableView: UITableView!
+    var doneButton: UIButton!
+    var cancelButton: UIButton!
+    
     let model = SWFriendPickerModel()
     var bag = DisposeBag()
     var dataSource = [SWFriendPickerData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addActionButton()
         self.addTableView()
         self.loadData()
     }
@@ -40,6 +44,14 @@ class SWFriendPickerViewController: UIViewController {
         self.dataSource = data
         self.tableView?.reloadData()
     }
+    
+    @objc func cancelButtonClick() {
+        
+    }
+    
+    @objc func doneButtonClick() {
+        
+    }
 }
 
 extension SWFriendPickerViewController {
@@ -50,8 +62,35 @@ extension SWFriendPickerViewController {
         table.dataSource = self
         self.view.addSubview(table)
         table.snp.makeConstraints { (make) in
-            make.top.left.bottom.right.equalTo(0)
+            make.top.left.right.equalTo(0)
+            make.bottom.equalTo(self.doneButton.snp.top)
         }
+    }
+    
+    func addActionButton() {
+        let doneButton = UIButton.defaultButton(R.donebtn)
+        let cancelButton = UIButton.defaultButton(R.cancelbtn)
+        self.view.addSubview(doneButton)
+        self.view.addSubview(cancelButton)
+        
+        let height = 100;
+        doneButton.snp.makeConstraints { (make) in
+            make.left.bottom.equalTo(0)
+            make.right.equalTo(self.view.snp.centerX)
+            make.height.equalTo(height)
+        }
+        
+        cancelButton.snp.makeConstraints { (make) in
+            make.right.bottom.equalTo(0)
+            make.left.equalTo(self.view.snp.centerX)
+            make.height.equalTo(height)
+        }
+        
+        doneButton.addTarget(self, action: #selector(doneButtonClick), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(cancelButtonClick), for: .touchUpInside)
+        
+        self.doneButton = doneButton
+        self.cancelButton = cancelButton
     }
 }
 
