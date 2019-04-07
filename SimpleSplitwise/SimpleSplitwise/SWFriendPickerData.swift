@@ -10,5 +10,11 @@ import Foundation
 
 class SWFriendPickerData {
     var name = ""
-    var selected = false    
+    var selected = false
+    
+    convenience init(name: String, selected: Bool = false) {
+        self.init()
+        self.name = name
+        self.selected = selected
+    }
 }

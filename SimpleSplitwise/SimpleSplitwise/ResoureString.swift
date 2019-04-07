@@ -11,4 +11,6 @@ import Foundation
 class R {
     static let cancelbtn = "Cancel"
     static let donebtn   = "Done"
+    static let addbtn    = "Add New Friend"
+    static let inputFriendName    = "Input Friend Name"
 }

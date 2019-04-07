@@ -12,25 +12,43 @@ import RxCocoa
 
 class SWFriendPickerModel {
     
-    let db = SWFriendTable()
+    fileprivate let db = SWFriendTable()
+    
+    var dataSource = [SWFriendPickerData]()
+    let dataSourceSignal = PublishSubject<[SWFriendPickerData]>()
         
-    func loadDataSource() -> Observable<[SWFriendPickerData]> {
-        return Observable<[SWFriendPickerData]>.create { [weak self] (observer) -> Disposable in
-            let dbFriend = self?.db.getAllFriend() ?? []
-            let allFriend = dbFriend.map({ (oneFriend) -> SWFriendPickerData in
-                 let friend = SWFriendPickerData()
-                 friend.name = oneFriend.name ?? ""
-                 return friend
-            })
-            
-            observer.onNext(allFriend)
-            observer.onCompleted()
-            return Disposables.create()
-        }
+    func loadDataSource() {
+        
+        let dbFriend = self.db.getAllFriend() ?? []
+        let allFriend = dbFriend.map({ (oneFriend) -> SWFriendPickerData in
+            return SWFriendPickerData(name: oneFriend.name ?? "")
+        })
+        
+        self.dataSource = allFriend
+        self.dataSourceSignal.onNext(self.dataSource)
     }
     
-    func addFriend(_ name: String) {
-        let friend = SWFriend.init(name: name)
-        self.db.add(friend: friend)
+    func addFriend(_ name: String?) {
+        
+        guard let name = name, !name.isEmpty else {
+            return
+        }
+        db.add(friend: SWFriend.init(name: name))
+        dataSource.insert(SWFriendPickerData(name: name, selected: true), at: 0)
+        
+        self.dataSourceSignal.onNext(self.dataSource)
+    }
+    
+    func selectItemAtIndex(_ index: Int) {
+        if index >= self.dataSource.count || index < 0  {
+            return
+        }
+        let item = dataSource[index]
+        dataSource[index].selected = !item.selected
+        dataSourceSignal.onNext(self.dataSource)
+    }
+    
+    func selectedFriend() -> [SWFriendPickerData] {        
+        return dataSource.filter({ $0.selected})
     }
 }

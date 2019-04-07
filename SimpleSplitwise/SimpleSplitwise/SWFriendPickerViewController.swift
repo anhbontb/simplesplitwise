@@ -9,45 +9,65 @@
 import UIKit
 import SnapKit
 import RxSwift
+import RxCocoa
 
-
-class SWFriendPickerViewController: UIViewController {
+class SWFriendPickerViewController: SWBaseViewController {
     
     var tableView: UITableView!
-    var bottomView: SWBottonActionView!
+    var searchView: SWAddFriendView!
+    let result = PublishSubject<[SWFriendPickerData]>()
     
     let model = SWFriendPickerModel()
     var bag = DisposeBag()
-    var dataSource = [SWFriendPickerData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addActionButton()
+        self.addNavigationBarItem()
+        self.addSearchView()
         self.addTableView()
-        self.reloadData()
+        self.setupEvent()
+        self.model.loadDataSource()
     }
     
-    func reloadData() {
-        self.model.loadDataSource().subscribe(onNext: { [weak self] (data) in
-            self?.reloadTableView(data)
+    func setupEvent() {
+        self.model.dataSourceSignal
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (data) in
+                self?.tableView.reloadData()
         }).disposed(by: self.bag)
     }
-    
-    func reloadTableView(_ data: [SWFriendPickerData]) {
-        self.dataSource = data
-        self.tableView?.reloadData()
-    }
-    
-    @objc func cancelButtonClick() {
-        
-    }
-    
+  
     @objc func doneButtonClick() {
-        
+        let friends = self.model.selectedFriend()
+        self.result.onNext(friends)
+        self.result.onCompleted()
+    }
+    
+    @objc func addFriendClick() {
+        let name = self.searchView.textField.text
+        self.searchView.textField.text = nil
+        self.addFriend(name)
+    }
+    
+    func addFriend(_ name: String?) {       
+        self.model.addFriend(name)
     }
 }
 
 extension SWFriendPickerViewController {
+    
+    func addSearchView() {
+        let search = SWAddFriendView.view()
+        self.view.addSubview(search)
+        
+        let height = SWAddFriendView.height()
+        search.snp.makeConstraints { (make) in
+            make.left.right.top.equalTo(0)
+            make.height.equalTo(height)
+        }
+        search.addButton.addTarget(self, action: #selector(addFriendClick), for: .touchUpInside)
+        self.searchView = search
+    }
     
     func addTableView() {
         let table = UITableView()
@@ -55,43 +75,32 @@ extension SWFriendPickerViewController {
         table.dataSource = self
         self.view.addSubview(table)
         table.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(0)
-            make.bottom.equalTo(self.bottomView.snp.top)
+            make.left.right.bottom.equalTo(0)
+            make.top.equalTo(self.searchView.snp.bottom)
         }
+        self.tableView = table
     }
     
-    func addActionButton() {
-        let bottomView = SWBottonActionView.view()
-        self.view.addSubview(bottomView)
-        
-        let height = SWBottonActionView.height()
-        bottomView.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(height)
-        }
-        bottomView.doneButton.addTarget(self, action: #selector(doneButtonClick), for: .touchUpInside)
-        bottomView.cancelButton.addTarget(self, action: #selector(cancelButtonClick), for: .touchUpInside)
-        self.bottomView = bottomView
+    func addNavigationBarItem() {
+        let add = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClick))
+        navigationItem.rightBarButtonItems = [add]
     }
 }
 
 extension SWFriendPickerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return self.model.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SWFriendCell.defaultCell(for: tableView)
-        let item = self.dataSource[indexPath.row]
+        let item = self.model.dataSource[indexPath.row]
         cell.setItem(item)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let item = self.dataSource[indexPath.row]
-        self.dataSource[indexPath.row].selected = !item.selected
-        tableView.reloadData()
+        self.model.selectItemAtIndex(indexPath.row)
     }    
 }

@@ -25,6 +25,7 @@ class SWBottonActionView: UIView {
     }    
     
     func addActionButton() {
+        self.backgroundColor = .white
         let doneButton = UIButton.defaultButton(R.donebtn)
         let cancelButton = UIButton.defaultButton(R.cancelbtn)
         self.addSubview(doneButton)
