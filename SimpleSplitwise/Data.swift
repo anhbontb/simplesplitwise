@@ -23,12 +23,23 @@ internal class SWFriend: Object {
 }
 
 internal class SWGroupInfo: Object {
-    @objc dynamic var groupId: Int = 0
+    @objc dynamic var groupId: Int64 = 0
     @objc dynamic var groupName: String?
     @objc dynamic var groupDescription: String?
     var groupMembers: List<String>?
     
     override static func primaryKey() -> String? {
         return "groupId"
-    }    
+    }
+    
+    func setMembers(_ members: [String]?) {
+        guard let members = members else {
+            return
+        }
+        var list = List<String>()
+        members.forEach { (oneMember) in
+            list.append(oneMember)
+        }
+        self.groupMembers = list
+    }
 }

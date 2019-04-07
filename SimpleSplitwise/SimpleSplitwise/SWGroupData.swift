@@ -9,6 +9,7 @@
 import UIKit
 
 class SWGroupData {
+    var groupId: Int64 = 0
     var name: String?
     var description: String?
     var members: [String]?
