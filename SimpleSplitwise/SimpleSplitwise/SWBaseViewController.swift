@@ -11,7 +11,7 @@ import UIKit
 public extension UIViewController {    
     func popMe() {
         self.navigationController?.popToViewController(self, animated: true)
-    }
+    }    
 }
 
 class SWBaseViewController: UIViewController {

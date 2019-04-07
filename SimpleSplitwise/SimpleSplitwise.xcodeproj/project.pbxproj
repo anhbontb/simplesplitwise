@@ -44,6 +44,9 @@
 		2265B80D225A1B1C00CD92DD /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B80C225A1B1C00CD92DD /* Table.swift */; };
 		2265B80F225A1EB700CD92DD /* SWAllGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B80E225A1EB700CD92DD /* SWAllGroupsViewController.swift */; };
 		2265B811225A3E5400CD92DD /* SWAllGroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B810225A3E5400CD92DD /* SWAllGroupsModel.swift */; };
+		227EE7C5225A453900F070A2 /* SWGroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7C4225A453900F070A2 /* SWGroupDetailViewController.swift */; };
+		227EE7C7225A459300F070A2 /* SWGroupDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7C6225A459300F070A2 /* SWGroupDetailModel.swift */; };
+		227EE7C9225A494D00F070A2 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7C8225A494D00F070A2 /* UIStoryboard+Extension.swift */; };
 		22DDFD022258B13000175447 /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFD012258B13000175447 /* DBTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,9 @@
 		2265B80C225A1B1C00CD92DD /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		2265B80E225A1EB700CD92DD /* SWAllGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWAllGroupsViewController.swift; sourceTree = "<group>"; };
 		2265B810225A3E5400CD92DD /* SWAllGroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAllGroupsModel.swift; sourceTree = "<group>"; };
+		227EE7C4225A453900F070A2 /* SWGroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWGroupDetailViewController.swift; sourceTree = "<group>"; };
+		227EE7C6225A459300F070A2 /* SWGroupDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWGroupDetailModel.swift; sourceTree = "<group>"; };
+		227EE7C8225A494D00F070A2 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		22DDFD012258B13000175447 /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,9 +163,10 @@
 		22319770225891B000F71F20 /* SimpleSplitwise */ = {
 			isa = PBXGroup;
 			children = (
+				227EE7C3225A451C00F070A2 /* GroupDetail */,
+				2265B7F12258CD5100CD92DD /* Commonn */,
 				2265B812225A3E5C00CD92DD /* AllGroups */,
 				2265B80122597CFB00CD92DD /* AddGroup */,
-				2265B7F12258CD5100CD92DD /* Commonn */,
 				2265B7E72258C08F00CD92DD /* FriendPicker */,
 				22319771225891B000F71F20 /* AppDelegate.swift */,
 				22319775225891B000F71F20 /* Main.storyboard */,
@@ -234,6 +241,7 @@
 				2265B7F42258EC2800CD92DD /* ResoureString.swift */,
 				2265B7FF225978F600CD92DD /* SWBaseViewController.swift */,
 				2265B8042259835300CD92DD /* UIView+Extension.swift */,
+				227EE7C8225A494D00F070A2 /* UIStoryboard+Extension.swift */,
 			);
 			name = Commonn;
 			sourceTree = "<group>";
@@ -264,6 +272,15 @@
 				2265B810225A3E5400CD92DD /* SWAllGroupsModel.swift */,
 			);
 			name = AllGroups;
+			sourceTree = "<group>";
+		};
+		227EE7C3225A451C00F070A2 /* GroupDetail */ = {
+			isa = PBXGroup;
+			children = (
+				227EE7C4225A453900F070A2 /* SWGroupDetailViewController.swift */,
+				227EE7C6225A459300F070A2 /* SWGroupDetailModel.swift */,
+			);
+			name = GroupDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,10 +398,13 @@
 				2265B811225A3E5400CD92DD /* SWAllGroupsModel.swift in Sources */,
 				2265B80F225A1EB700CD92DD /* SWAllGroupsViewController.swift in Sources */,
 				2265B7FC2258F03200CD92DD /* SWBottonActionView.swift in Sources */,
+				227EE7C7225A459300F070A2 /* SWGroupDetailModel.swift in Sources */,
 				2265B7F52258EC2800CD92DD /* ResoureString.swift in Sources */,
 				22319772225891B000F71F20 /* AppDelegate.swift in Sources */,
 				2265B800225978F600CD92DD /* SWBaseViewController.swift in Sources */,
+				227EE7C5225A453900F070A2 /* SWGroupDetailViewController.swift in Sources */,
 				2265B7F72258ECB100CD92DD /* Button+Extension.swift in Sources */,
+				227EE7C9225A494D00F070A2 /* UIStoryboard+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

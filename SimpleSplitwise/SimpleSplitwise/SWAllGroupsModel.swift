@@ -21,7 +21,7 @@ class SWAllGroupsModel {
             let group = SWGroupData()
             group.groupId = groupInfo.groupId
             group.name = groupInfo.groupName
-            group.description = groupInfo.description
+            group.description = groupInfo.groupDescription
             group.members = groupInfo.groupMembers?.compactMap({$0})
             return group
         }
