@@ -13,7 +13,7 @@
         <!--All Groups-->
         <scene sceneID="eXT-WO-1c7">
             <objects>
-                <tableViewController id="gDn-sz-slS" customClass="ViewController" customModule="SimpleSplitwise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gDn-sz-slS" customClass="SWAllGroupsViewController" customModule="SimpleSplitwise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q0s-0b-ZBC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                     <navigationItem key="navigationItem" title="All Groups" id="lp2-Hf-56n">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="zPS-yt-G2u">
                             <connections>
-                                <segue destination="6YA-3c-kzD" kind="push" id="d3a-IZ-HS4"/>
+                                <segue destination="6YA-3c-kzD" kind="push" identifier="AddGroupSegue" id="d3a-IZ-HS4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,6 +75,10 @@
                                 <rect key="frame" x="0.0" y="218" width="375" height="385"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6YA-3c-kzD" id="jnc-h6-RER"/>
+                                    <outlet property="delegate" destination="6YA-3c-kzD" id="soV-Ae-4l4"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-jA-bJm">
                                 <rect key="frame" x="16" y="160" width="336" height="30"/>
@@ -89,13 +93,22 @@
                         <viewLayoutGuide key="safeArea" id="uOh-7s-dto"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Group" id="048-93-1oR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="XVj-vO-qfb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create Group" id="XVj-vO-qfb">
+                            <connections>
+                                <action selector="createGroupClick:" destination="6YA-3c-kzD" id="jre-6S-lHr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="8O5-pK-yox" id="WZc-pU-MVV"/>
+                        <outlet property="txtGroupDescription" destination="LLX-nO-gGa" id="ZIA-pl-oiz"/>
+                        <outlet property="txtGroupName" destination="SPz-b5-lfI" id="JCE-iG-9jw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylg-5X-l2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640.79999999999995" y="-210.04497751124438"/>
+            <point key="canvasLocation" x="649" y="-224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mge-lp-LPj">

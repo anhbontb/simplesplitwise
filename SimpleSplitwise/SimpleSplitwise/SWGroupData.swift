@@ -8,6 +8,15 @@
 
 import UIKit
 
-class SWGroupData: NSObject {
-
+class SWGroupData {
+    var name: String?
+    var description: String?
+    var members: [String]?
+    
+    convenience init(name: String, description: String, members: [String]?) {
+        self.init()
+        self.name = name
+        self.description = description
+        self.members = members
+    }
 }
