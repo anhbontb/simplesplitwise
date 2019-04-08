@@ -13,7 +13,6 @@ import RxCocoa
 class SWFriendPickerModel {
     
     fileprivate let db = SWDatabase()
-    
     var dataSource = [SWFriendPickerData]()
     let dataSourceSignal = PublishSubject<[SWFriendPickerData]>()
         

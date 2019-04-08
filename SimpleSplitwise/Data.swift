@@ -36,7 +36,7 @@ internal class SWGroupInfo: Object {
         guard let members = members else {
             return
         }
-        var list = List<String>()
+        let list = List<String>()
         members.forEach { (oneMember) in
             list.append(oneMember)
         }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RxSwift
 class SWGroupDetailViewController: SWBaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lbName: UILabel!
@@ -15,6 +15,7 @@ class SWGroupDetailViewController: SWBaseViewController {
     @IBOutlet weak var lbMember: UILabel!
 
     var group: SWGroupData!
+    var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,21 @@ class SWGroupDetailViewController: SWBaseViewController {
         self.lbName.text = group.name
         self.lbDescription.text = group.description
         self.lbMember.text = group.members?.joined(separator: ",")
-    }    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let addGroup = segue.destination as? SWAddBillViewController else {
+            return
+        }
+        setupCallBack(addGroup)
+    }
+    
+    func setupCallBack(_ addGroup: SWAddBillViewController) {
+        addGroup.group = group
+        addGroup.result.subscribe(onNext: { [weak self] (groupData) in
+            self?.popMe()
+        }).disposed(by: bag)
+    }
 }
 
 extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSource {

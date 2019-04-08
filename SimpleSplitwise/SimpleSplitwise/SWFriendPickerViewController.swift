@@ -17,7 +17,7 @@ class SWFriendPickerViewController: SWBaseViewController {
     var searchView: SWAddFriendView!
     let result = PublishSubject<[SWFriendPickerData]>()
     
-    let model = SWFriendPickerModel()
+    var model = SWFriendPickerModel()
     var bag = DisposeBag()
 
     override func viewDidLoad() {
@@ -52,9 +52,6 @@ class SWFriendPickerViewController: SWBaseViewController {
     func addFriend(_ name: String?) {       
         self.model.addFriend(name)
     }
-}
-
-extension SWFriendPickerViewController {
     
     func addSearchView() {
         let search = SWAddFriendView.view()
@@ -74,11 +71,15 @@ extension SWFriendPickerViewController {
         table.delegate = self
         table.dataSource = self
         self.view.addSubview(table)
-        table.snp.makeConstraints { (make) in
+        self.tableView = table
+        self.setupTableViewFrame()
+    }
+    
+    func setupTableViewFrame() {
+        self.tableView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(0)
             make.top.equalTo(self.searchView.snp.bottom)
         }
-        self.tableView = table
     }
     
     func addNavigationBarItem() {
