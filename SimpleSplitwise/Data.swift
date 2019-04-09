@@ -26,7 +26,7 @@ internal class SWGroupInfo: Object {
     @objc dynamic var groupId: Int64 = 0
     @objc dynamic var groupName: String?
     @objc dynamic var groupDescription: String?
-    var groupMembers: List<String>?
+    var groupMembers: List<String> = List<String>()
     
     override static func primaryKey() -> String? {
         return "groupId"

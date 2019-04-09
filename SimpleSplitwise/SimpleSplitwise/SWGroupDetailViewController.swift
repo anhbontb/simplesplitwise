@@ -38,7 +38,7 @@ class SWGroupDetailViewController: SWBaseViewController {
     }
     
     func setupCallBack(_ addGroup: SWAddBillViewController) {
-        addGroup.group = group
+        addGroup.setGroup(group)
         addGroup.result.subscribe(onNext: { [weak self] (groupData) in
             self?.popMe()
         }).disposed(by: bag)

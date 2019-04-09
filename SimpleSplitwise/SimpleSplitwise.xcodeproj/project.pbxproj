@@ -27,6 +27,8 @@
 		22319777225891B000F71F20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22319775225891B000F71F20 /* Main.storyboard */; };
 		22319779225891B400F71F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22319778225891B400F71F20 /* Assets.xcassets */; };
 		2231977C225891B400F71F20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2231977A225891B400F71F20 /* LaunchScreen.storyboard */; };
+		223289B9225D27CD005506F5 /* SWBillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223289B8225D27CD005506F5 /* SWBillData.swift */; };
+		223289BB225D2B55005506F5 /* SWAddBillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223289BA225D2B55005506F5 /* SWAddBillModel.swift */; };
 		2265B7E92258C0ED00CD92DD /* SWFriendPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7E82258C0ED00CD92DD /* SWFriendPickerViewController.swift */; };
 		2265B7EB2258C12D00CD92DD /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7EA2258C12D00CD92DD /* Data.swift */; };
 		2265B7EE2258C5DB00CD92DD /* SWFriendPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */; };
@@ -50,6 +52,8 @@
 		227EE7CC225ABB7200F070A2 /* SWAddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7CB225ABB7200F070A2 /* SWAddBillViewController.swift */; };
 		227EE7CE225ABF3100F070A2 /* SWSelectMemberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7CD225ABF3000F070A2 /* SWSelectMemberPicker.swift */; };
 		227EE7D0225AC0FF00F070A2 /* SWSelectMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7CF225AC0FF00F070A2 /* SWSelectMemberModel.swift */; };
+		22DAEBA5225D323D0052A8B4 /* SWBillValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAEBA4225D323D0052A8B4 /* SWBillValueCell.swift */; };
+		22DAEBA7225D36960052A8B4 /* SWBillValueData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAEBA6225D36960052A8B4 /* SWBillValueData.swift */; };
 		22DDFD022258B13000175447 /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDFD012258B13000175447 /* DBTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,8 @@
 		223197E62258A01600F71F20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Static/Realm.framework; sourceTree = "<group>"; };
 		223197E72258A01600F71F20 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/Static/SnapKit.framework; sourceTree = "<group>"; };
 		223197E82258A01600F71F20 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/Static/RxCocoa.framework; sourceTree = "<group>"; };
+		223289B8225D27CD005506F5 /* SWBillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWBillData.swift; sourceTree = "<group>"; };
+		223289BA225D2B55005506F5 /* SWAddBillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAddBillModel.swift; sourceTree = "<group>"; };
 		2265B7E82258C0ED00CD92DD /* SWFriendPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerViewController.swift; sourceTree = "<group>"; };
 		2265B7EA2258C12D00CD92DD /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2265B7ED2258C5DB00CD92DD /* SWFriendPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWFriendPickerModel.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 		227EE7CB225ABB7200F070A2 /* SWAddBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAddBillViewController.swift; sourceTree = "<group>"; };
 		227EE7CD225ABF3000F070A2 /* SWSelectMemberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSelectMemberPicker.swift; sourceTree = "<group>"; };
 		227EE7CF225AC0FF00F070A2 /* SWSelectMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSelectMemberModel.swift; sourceTree = "<group>"; };
+		22DAEBA4225D323D0052A8B4 /* SWBillValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWBillValueCell.swift; sourceTree = "<group>"; };
+		22DAEBA6225D36960052A8B4 /* SWBillValueData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWBillValueData.swift; sourceTree = "<group>"; };
 		22DDFD012258B13000175447 /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +304,10 @@
 			isa = PBXGroup;
 			children = (
 				227EE7CB225ABB7200F070A2 /* SWAddBillViewController.swift */,
+				223289B8225D27CD005506F5 /* SWBillData.swift */,
+				223289BA225D2B55005506F5 /* SWAddBillModel.swift */,
+				22DAEBA4225D323D0052A8B4 /* SWBillValueCell.swift */,
+				22DAEBA6225D36960052A8B4 /* SWBillValueData.swift */,
 			);
 			name = AddBill;
 			sourceTree = "<group>";
@@ -403,10 +415,13 @@
 			files = (
 				2265B8072259853B00CD92DD /* SWAddFriendView.swift in Sources */,
 				2265B7E92258C0ED00CD92DD /* SWFriendPickerViewController.swift in Sources */,
+				223289BB225D2B55005506F5 /* SWAddBillModel.swift in Sources */,
 				2265B7EE2258C5DB00CD92DD /* SWFriendPickerModel.swift in Sources */,
 				227EE7CE225ABF3100F070A2 /* SWSelectMemberPicker.swift in Sources */,
+				223289B9225D27CD005506F5 /* SWBillData.swift in Sources */,
 				2265B7F32258CD6800CD92DD /* UITableView+Extension.swift in Sources */,
 				2265B7FA2258EFB500CD92DD /* SWFriendCell.swift in Sources */,
+				22DAEBA7225D36960052A8B4 /* SWBillValueData.swift in Sources */,
 				2265B7EB2258C12D00CD92DD /* Data.swift in Sources */,
 				227EE7D0225AC0FF00F070A2 /* SWSelectMemberModel.swift in Sources */,
 				2265B80D225A1B1C00CD92DD /* Table.swift in Sources */,
@@ -415,6 +430,7 @@
 				2265B80322597D1500CD92DD /* SWAddGroupViewController.swift in Sources */,
 				2265B7F02258C66600CD92DD /* SWFriendPickerData.swift in Sources */,
 				2265B811225A3E5400CD92DD /* SWAllGroupsModel.swift in Sources */,
+				22DAEBA5225D323D0052A8B4 /* SWBillValueCell.swift in Sources */,
 				2265B80F225A1EB700CD92DD /* SWAllGroupsViewController.swift in Sources */,
 				2265B7FC2258F03200CD92DD /* SWBottonActionView.swift in Sources */,
 				227EE7C7225A459300F070A2 /* SWGroupDetailModel.swift in Sources */,

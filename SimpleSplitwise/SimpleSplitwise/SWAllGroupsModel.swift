@@ -22,7 +22,7 @@ class SWAllGroupsModel {
             group.groupId = groupInfo.groupId
             group.name = groupInfo.groupName
             group.description = groupInfo.groupDescription
-            group.members = groupInfo.groupMembers?.compactMap({$0})
+            group.members = groupInfo.groupMembers.compactMap({$0})
             return group
         }
         self.dataSource = dataSource
