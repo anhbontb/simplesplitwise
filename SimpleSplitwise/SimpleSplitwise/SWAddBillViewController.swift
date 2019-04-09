@@ -13,7 +13,7 @@ import RxSwift
 class SWAddBillViewController: SWBaseViewController {
     
     var bag = DisposeBag()
-    let result = PublishSubject<SWGroupData>()
+    let result = PublishSubject<SWBillData>()
     var model = SWAddBillModel()
     
     @IBOutlet weak var tableview: UITableView!
@@ -81,6 +81,11 @@ class SWAddBillViewController: SWBaseViewController {
         let date = formatter.string(from: datePicker.date)
         self.btnDate.setTitle(date, for: .normal)
         self.txtDate.resignFirstResponder()
+    }
+    
+    @IBAction func createBillClick(_ sender: Any) {
+        self.result.onNext(self.model.getBill())
+        self.result.onCompleted()
     }
     
     @IBAction func chooseDateClick(_ sender: Any) {

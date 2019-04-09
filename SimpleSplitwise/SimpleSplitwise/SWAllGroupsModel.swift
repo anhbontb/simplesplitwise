@@ -35,7 +35,10 @@ class SWAllGroupsModel {
         groupInfo.groupId = Int64(Date().timeIntervalSince1970)
         groupInfo.groupName = group.name
         groupInfo.groupDescription = group.description
-        groupInfo.setMembers(group.members)
+        if let members = group.members?.toList() {
+            groupInfo.groupMembers = members
+        }
+        
         
         self.db.add(data: groupInfo)
         self.dataSource.insert(group, at: 0)

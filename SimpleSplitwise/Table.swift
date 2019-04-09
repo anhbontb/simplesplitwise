@@ -19,6 +19,7 @@ protocol SWTableProtocol {
     func realmDB() -> Realm
     func add<T:Object>(data: T)
     func getAllData<T:Object>() -> [T]?
+    func getAllData<T:Object>(query: String) -> [T]?
 }
 
 extension SWTableProtocol {
@@ -36,6 +37,11 @@ extension SWTableProtocol {
         try? realm.write {
             realm.add(data, update: true)
         }
+    }
+    
+    func getAllData<T:Object>(query: String) -> [T]? {
+        let realm = realmDB()
+        return realm.objects(T.self).filter(query).toArray()
     }
 }
 

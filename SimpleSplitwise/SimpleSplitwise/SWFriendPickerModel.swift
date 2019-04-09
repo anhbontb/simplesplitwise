@@ -18,7 +18,7 @@ class SWFriendPickerModel {
         
     func loadDataSource() {
         
-        let dbFriend: [SWFriend] = self.db.getAllData() ?? []
+        let dbFriend: [SWFriendInfo] = self.db.getAllData() ?? []
         let allFriend = dbFriend.map({ (oneFriend) -> SWFriendPickerData in
             return SWFriendPickerData(name: oneFriend.name ?? "")
         })
@@ -32,7 +32,7 @@ class SWFriendPickerModel {
         guard let name = name, !name.isEmpty else {
             return
         }
-        db.add(data: SWFriend.init(name: name))
+        db.add(data: SWFriendInfo.init(name: name))
         dataSource.insert(SWFriendPickerData(name: name, selected: true), at: 0)
         
         self.dataSourceSignal.onNext(self.dataSource)

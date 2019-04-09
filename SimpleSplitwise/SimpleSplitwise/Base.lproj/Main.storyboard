@@ -82,6 +82,10 @@
                                 <rect key="frame" x="0.0" y="199" width="375" height="468"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oBN-eG-0NF" id="dLz-PT-slx"/>
+                                    <outlet property="delegate" destination="oBN-eG-0NF" id="Tnn-6Q-Prg"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbs-H0-ef3">
                                 <rect key="frame" x="122" y="144" width="237" height="21"/>
@@ -215,7 +219,11 @@
                         <viewLayoutGuide key="safeArea" id="1Qf-nI-Adh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Bill" id="0hb-Hc-zNJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="20q-mP-XtE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="20q-mP-XtE">
+                            <connections>
+                                <action selector="createBillClick:" destination="ovt-Z0-JqQ" id="r8Q-Il-C1Q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>

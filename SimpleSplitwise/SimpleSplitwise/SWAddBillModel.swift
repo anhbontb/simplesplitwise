@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 class SWAddBillModel {
-    var billData = SWBillData()
+    fileprivate var billData = SWBillData()
     var group: SWGroupData!
     var dataSource = [SWBillValueData]()
     let dataSourceSignal = PublishSubject<SWBillData>()
@@ -21,7 +21,7 @@ class SWAddBillModel {
     }
     
     func selectMember(_ friends: [SWFriendPickerData]) {
-        self.billData.member = friends.map({$0.name})
+        self.billData.members = friends.map({$0.name})
         self.buildDataSource()
     }
     
@@ -47,7 +47,7 @@ class SWAddBillModel {
     }
     
     func allMembers() -> [String] {
-        var member = self.billData.member
+        var member = self.billData.members
         if let paider = self.billData.paider {
             member.insert(paider, at: 0)
         }
@@ -67,7 +67,7 @@ class SWAddBillModel {
     }
     
     func update(amount: String, index: Int) {
-        let value = Float(amount) ?? 0        
+        let value = Float(amount) ?? 0
         self.dataSource[index].isEdited = true
         self.dataSource[index].value.onNext(value)
 
@@ -87,5 +87,15 @@ class SWAddBillModel {
                 data.value.onNext(userAmount)
             }
         }
+    }
+    
+    func getBill() -> SWBillData {
+        var billValue = [String: Float]()
+        self.dataSource.forEach { (data) in
+            billValue[data.name] = (try! data.value.value())
+        }
+        self.billData.amountDetail = billValue
+        self.billData.groupId = self.group.groupId
+        return self.billData
     }
 }

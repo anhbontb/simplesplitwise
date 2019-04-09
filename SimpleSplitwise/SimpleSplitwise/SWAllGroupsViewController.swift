@@ -67,7 +67,7 @@ extension SWAllGroupsViewController {
         guard let detail = UIStoryboard.currentStoryboard()?.viewController("DetailViewController") as? SWGroupDetailViewController else {
             return
         }
-        detail.group = model.dataSource[indexPath.row]
+        detail.setGroup(model.dataSource[indexPath.row])
         self.navigationController?.pushViewController(detail, animated: true)        
     }
     

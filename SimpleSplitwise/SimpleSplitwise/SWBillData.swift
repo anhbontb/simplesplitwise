@@ -9,10 +9,10 @@
 import Foundation
 
 class SWBillData {
-    var group: SWGroupData!
+    var groupId: Int64 = 0
     var paider: String?
-    var member = [String]()
+    var members = [String]()
     var billDescription: String?
     var amount: Float = 0
-    var amountDetail =  [String: Int]()
+    var amountDetail =  [String: Float]()
 }
