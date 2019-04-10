@@ -46,6 +46,14 @@ class SWAddBillViewController: SWBaseViewController {
             .subscribe(onNext: { [weak self](text) in
                 self?.model.updateAmount(text ?? "")
             }).disposed(by: bag)
+        
+        self.txtDescription
+            .rx
+            .text
+            .changed
+            .subscribe(onNext: { [weak self](text) in
+                self?.model.updateBillDescription(text ?? "")
+            }).disposed(by: bag)
     }
     
     func setGroup(_ group: SWGroupData) {

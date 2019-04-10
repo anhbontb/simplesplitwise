@@ -51,6 +51,7 @@ class SWBillInfo: Object {
     @objc dynamic var billDescription: String?
     @objc dynamic var amount: Float = 0
     @objc dynamic var amountDetailString: String?
+    @objc dynamic var createDate: Date = Date()
     var members: List<String> = List<String>()
     
     override static func primaryKey() -> String? {
@@ -70,6 +71,7 @@ class SWBillInfo: Object {
         bill.billDescription = data.billDescription
         bill.amountDetailString = data.amountDetail.toString
         bill.members = data.members.toList()
+        bill.createDate = data.createDate
         return bill
     }
     
@@ -81,6 +83,7 @@ class SWBillInfo: Object {
         bill.billDescription = self.billDescription
         bill.amountDetail = (self.amountDetailString?.toJson() as? [String: Float]) ?? [String: Float]()
         bill.members = self.members.compactMap({$0})
+        bill.createDate = self.createDate
         return bill
     }
 }

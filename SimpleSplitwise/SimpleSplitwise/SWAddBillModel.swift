@@ -25,11 +25,19 @@ class SWAddBillModel {
         self.buildDataSource()
     }
     
+    func selectedDate(_ date: Date) {
+        self.billData.createDate = date
+    }
+    
     func updateAmount(_ amount: String) {
         if let intAmount = Float(amount) {
             self.billData.amount = intAmount
             self.buildDataSource()
         }
+    }
+    
+    func updateBillDescription(_ description: String) {
+        self.billData.billDescription = description
     }
     
     func paiderDataSource() -> [String] {

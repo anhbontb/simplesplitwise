@@ -15,7 +15,11 @@ class SWFriendPickerModel {
     fileprivate let db = SWDatabase()
     var dataSource = [SWFriendPickerData]()
     let dataSourceSignal = PublishSubject<[SWFriendPickerData]>()
-        
+    
+    deinit {
+        self.dataSourceSignal.onCompleted()
+    }
+    
     func loadDataSource() {
         
         let dbFriend: [SWFriendInfo] = self.db.getAllData() ?? []

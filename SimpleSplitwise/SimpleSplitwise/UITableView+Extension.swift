@@ -23,7 +23,7 @@ extension UITableViewCell {
         let identifier = self.cellIdentifier()
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
         if cell == nil {
-            cell = self.init(style: .default, reuseIdentifier: identifier)
+            cell = self.init(style: .subtitle, reuseIdentifier: identifier)
         }        
         guard let defautlCell = cell as? Self else {
             fatalError("Can't Find Cell!!!")

@@ -15,6 +15,10 @@ class SWAllGroupsModel {
     let dataSourceSignal = PublishSubject<[SWGroupData]>()
     let db = SWDatabase()
 
+    deinit {
+        self.dataSourceSignal.onCompleted()
+    }
+    
     func loadDataSource() {
         let groups: [SWGroupInfo] = db.getAllData() ?? []
         let dataSource = groups.map { (groupInfo) -> SWGroupData in

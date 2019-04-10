@@ -20,8 +20,10 @@ class SWGroupDetailViewController: SWBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupEvent()
         self.showGroupInfo()
         self.model.loadData()
+        
     }
     
     func setupEvent() {
@@ -57,14 +59,35 @@ class SWGroupDetailViewController: SWBaseViewController {
 }
 
 extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.dataSource.count
+        return section == 0 ? model.membersDetail.count : model.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return indexPath.section == 0 ? memberDetailCell(tableView, indexPath) : billInfoCell(tableView, indexPath)
+    }
+    
+    func memberDetailCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell.defaultCell(for: tableView)
+        let info = model.membersDetail[indexPath.row]
+        cell.textLabel?.text = info.name
+        cell.detailTextLabel?.text =  "\(info.amount) : " + info.ownerDescription
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        return cell
+
+    }
+    
+    func billInfoCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.defaultCell(for: tableView)
         let info = model.dataSource[indexPath.row]
-        cell.textLabel?.text = "\(info.amount) - \(info.paider ?? "") paid - \(info.billDescription ?? "")"
+        cell.textLabel?.text = "\(info.amount) - \(info.paider ?? "") paid - \(info.billDescription ?? "") - \(info.date)"
+        cell.detailTextLabel?.text =  "Members: \(info.members.joined(separator: ", "))"
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
         return cell
     }
+
 }
