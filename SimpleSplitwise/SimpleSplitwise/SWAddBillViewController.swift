@@ -92,7 +92,11 @@ class SWAddBillViewController: SWBaseViewController {
     }
     
     @IBAction func createBillClick(_ sender: Any) {
-        self.result.onNext(self.model.getBill())
+        let bill = self.model.getBill()
+        if self.validate(bill: bill) == false {
+            return
+        }
+        self.result.onNext(bill)
         self.result.onCompleted()
     }
     
@@ -124,6 +128,26 @@ class SWAddBillViewController: SWBaseViewController {
                                 self?.popMe()
                             }).disposed(by: bag)
 
+    }
+    
+    func validate(bill : SWBillData) -> Bool {
+        
+        guard let paider = bill.paider, !paider.isEmpty else {
+            alert("Please select paider")
+            return false
+        }
+        
+        if bill.members.isEmpty || bill.amountDetail.count <= 1 {
+            alert("Please select member")
+            return false
+        }
+        
+        if bill.amount <= 0 {
+            alert("Please input bill amount")
+            return false
+        }        
+        
+        return true
     }
 }
 
