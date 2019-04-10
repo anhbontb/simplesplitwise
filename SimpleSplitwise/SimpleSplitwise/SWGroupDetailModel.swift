@@ -39,8 +39,9 @@ class SWGroupDetailModel {
     
     func updateGroupDataSource(_ data: [SWBillData]) {
         self.dataSource = data
-        self.membersDetail = calculateGroupOwner(self.dataSource)
-        self.membersDetail = callculaterRelationShip(self.membersDetail)
+        let data = calculateGroupOwner(self.dataSource)
+        let relationship = callculaterRelationShip(data)
+        self.membersDetail = relationship.sorted(by: {$0.amount > $1.amount})
         self.dataSourceSignal.onNext(self.dataSource)
     }
     

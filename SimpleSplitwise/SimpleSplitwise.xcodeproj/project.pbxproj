@@ -53,6 +53,9 @@
 		227EE7CE225ABF3100F070A2 /* SWSelectMemberPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7CD225ABF3000F070A2 /* SWSelectMemberPicker.swift */; };
 		227EE7D0225AC0FF00F070A2 /* SWSelectMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE7CF225AC0FF00F070A2 /* SWSelectMemberModel.swift */; };
 		22C69E32225E837000C73EE5 /* SWGroupOwnerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C69E31225E837000C73EE5 /* SWGroupOwnerDetail.swift */; };
+		22C69E35225E9B0700C73EE5 /* SWMemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C69E34225E9B0700C73EE5 /* SWMemberDetailViewController.swift */; };
+		22C69E37225E9C9900C73EE5 /* SWMemberDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C69E36225E9C9900C73EE5 /* SWMemberDetailModel.swift */; };
+		22C69E39225E9CF600C73EE5 /* SWMemberDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C69E38225E9CF600C73EE5 /* SWMemberDetailData.swift */; };
 		22DAEBA5225D323D0052A8B4 /* SWBillValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAEBA4225D323D0052A8B4 /* SWBillValueCell.swift */; };
 		22DAEBA7225D36960052A8B4 /* SWBillValueData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAEBA6225D36960052A8B4 /* SWBillValueData.swift */; };
 		22DAEBC2225D4C0A0052A8B4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAEBC1225D4C0A0052A8B4 /* String+Extension.swift */; };
@@ -118,6 +121,9 @@
 		227EE7CD225ABF3000F070A2 /* SWSelectMemberPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSelectMemberPicker.swift; sourceTree = "<group>"; };
 		227EE7CF225AC0FF00F070A2 /* SWSelectMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSelectMemberModel.swift; sourceTree = "<group>"; };
 		22C69E31225E837000C73EE5 /* SWGroupOwnerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWGroupOwnerDetail.swift; sourceTree = "<group>"; };
+		22C69E34225E9B0700C73EE5 /* SWMemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMemberDetailViewController.swift; sourceTree = "<group>"; };
+		22C69E36225E9C9900C73EE5 /* SWMemberDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMemberDetailModel.swift; sourceTree = "<group>"; };
+		22C69E38225E9CF600C73EE5 /* SWMemberDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMemberDetailData.swift; sourceTree = "<group>"; };
 		22DAEBA4225D323D0052A8B4 /* SWBillValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWBillValueCell.swift; sourceTree = "<group>"; };
 		22DAEBA6225D36960052A8B4 /* SWBillValueData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWBillValueData.swift; sourceTree = "<group>"; };
 		22DAEBC1225D4C0A0052A8B4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		22319770225891B000F71F20 /* SimpleSplitwise */ = {
 			isa = PBXGroup;
 			children = (
+				22C69E33225E98D200C73EE5 /* MemberDetail */,
 				227EE7CA225ABB5B00F070A2 /* AddBill */,
 				227EE7C3225A451C00F070A2 /* GroupDetail */,
 				2265B7F12258CD5100CD92DD /* Commonn */,
@@ -321,6 +328,16 @@
 			name = AddBill;
 			sourceTree = "<group>";
 		};
+		22C69E33225E98D200C73EE5 /* MemberDetail */ = {
+			isa = PBXGroup;
+			children = (
+				22C69E34225E9B0700C73EE5 /* SWMemberDetailViewController.swift */,
+				22C69E36225E9C9900C73EE5 /* SWMemberDetailModel.swift */,
+				22C69E38225E9CF600C73EE5 /* SWMemberDetailData.swift */,
+			);
+			name = MemberDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,6 +449,7 @@
 				2265B7FA2258EFB500CD92DD /* SWFriendCell.swift in Sources */,
 				22DAEBA7225D36960052A8B4 /* SWBillValueData.swift in Sources */,
 				2265B7EB2258C12D00CD92DD /* Data.swift in Sources */,
+				22C69E35225E9B0700C73EE5 /* SWMemberDetailViewController.swift in Sources */,
 				227EE7D0225AC0FF00F070A2 /* SWSelectMemberModel.swift in Sources */,
 				2265B80D225A1B1C00CD92DD /* Table.swift in Sources */,
 				2265B8092259994E00CD92DD /* SWGroupData.swift in Sources */,
@@ -441,6 +459,7 @@
 				2265B7F02258C66600CD92DD /* SWFriendPickerData.swift in Sources */,
 				2265B811225A3E5400CD92DD /* SWAllGroupsModel.swift in Sources */,
 				22DAEBA5225D323D0052A8B4 /* SWBillValueCell.swift in Sources */,
+				22C69E39225E9CF600C73EE5 /* SWMemberDetailData.swift in Sources */,
 				2265B80F225A1EB700CD92DD /* SWAllGroupsViewController.swift in Sources */,
 				2265B7FC2258F03200CD92DD /* SWBottonActionView.swift in Sources */,
 				227EE7C7225A459300F070A2 /* SWGroupDetailModel.swift in Sources */,
@@ -453,6 +472,7 @@
 				22DAEBC2225D4C0A0052A8B4 /* String+Extension.swift in Sources */,
 				227EE7C9225A494D00F070A2 /* UIStoryboard+Extension.swift in Sources */,
 				22DAEBC4225D4D3C0052A8B4 /* Dictionary+Extension.swift in Sources */,
+				22C69E37225E9C9900C73EE5 /* SWMemberDetailModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

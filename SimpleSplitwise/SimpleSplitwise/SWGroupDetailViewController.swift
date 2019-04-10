@@ -63,6 +63,13 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
         return 2
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.backgroundColor = UIColor.white
+        label.text = section == 0 ? " Members" : " Bills"
+        return label
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? model.membersDetail.count : model.dataSource.count
     }
@@ -76,7 +83,9 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
         let info = model.membersDetail[indexPath.row]
         cell.textLabel?.text = info.name
         cell.detailTextLabel?.text =  "\(info.amount) : " + info.ownerDescription
+        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.accessoryType = .disclosureIndicator
         return cell
 
     }
@@ -87,7 +96,21 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
         cell.textLabel?.text = "\(info.amount) - \(info.paider ?? "") paid - \(info.billDescription ?? "") - \(info.date)"
         cell.detailTextLabel?.text =  "Members: \(info.members.joined(separator: ", "))"
         cell.textLabel?.adjustsFontSizeToFitWidth = true
+        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
+        cell.accessoryType = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 {
+            return
+        }
+        let controller = SWMemberDetailViewController()
+        let member = model.membersDetail[indexPath.row]
+        controller.set(groupBill: self.model.dataSource, member: member.name)
+        controller.title = "\(member.name) amount \(member.amount)"
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 }
