@@ -29,6 +29,9 @@ class SWAddGroupViewController: SWBaseViewController {
         let menbers = self.members
         
         let group = SWGroupData.init(name: name, description: description, members: menbers)
+        if validate(group: group) == false {
+            return
+        }
         self.result.onNext(group)
         self.result.onCompleted()
     }
@@ -41,7 +44,23 @@ class SWAddGroupViewController: SWBaseViewController {
             self?.tableView.reloadData()
             self?.popMe()
         }).disposed(by: self.bag)
-    }    
+    }
+    
+    func validate(group: SWGroupData) -> Bool{
+        guard let name = group.name, !name.isEmpty else {
+            self.alert("Please input group name")
+            return false
+        }
+        guard let member = group.members, !member.isEmpty else {
+            self.alert("Please add group members")
+            return false
+        }
+        guard member.count > 1 else {
+            self.alert("Group should have more than one member")
+            return false
+        }
+        return true
+    }
 }
 
 extension SWAddGroupViewController: UITableViewDelegate, UITableViewDataSource {

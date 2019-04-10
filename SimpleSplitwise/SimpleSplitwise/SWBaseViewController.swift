@@ -11,7 +11,14 @@ import UIKit
 public extension UIViewController {    
     func popMe() {
         self.navigationController?.popToViewController(self, animated: true)
-    }    
+    }
+    
+    func alert(_ message: String) {
+        let alert = UIAlertController.init(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "Close", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
 
 class SWBaseViewController: UIViewController {
