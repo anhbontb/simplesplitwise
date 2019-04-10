@@ -35,7 +35,7 @@ class SWGroupDetailViewController: SWBaseViewController {
     func showGroupInfo() {
         self.lbName.text = self.model.group.name
         self.lbDescription.text = self.model.group.description
-        self.lbMember.text = self.model.group.members?.joined(separator: ",")
+        self.lbMember.text = self.model.group.members?.joined(separator: ", ")
     }
     
     func setGroup(_ group: SWGroupData){
@@ -63,6 +63,10 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
         return 2
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = UIColor.white
@@ -87,17 +91,12 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.accessoryType = .disclosureIndicator
         return cell
-
     }
     
     func billInfoCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.defaultCell(for: tableView)
+        let cell = SWGroupBillCell.defaultCell(for: tableView)
         let info = model.dataSource[indexPath.row]
-        cell.textLabel?.text = "\(info.amount) - \(info.paider ?? "") paid - \(info.billDescription ?? "") - \(info.date)"
-        cell.detailTextLabel?.text =  "Members: \(info.members.joined(separator: ", "))"
-        cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
-        cell.accessoryType = .none
+        cell.setBill(info)
         return cell
     }
     

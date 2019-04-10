@@ -12,7 +12,7 @@ import UIKit
 extension UITableViewCell {
     
     public class func cellIdentifier() -> String {
-        return  "\(type(of:self))"
+        return  String(describing: self)
     }
     
     public class func cellHeight() -> Float {
