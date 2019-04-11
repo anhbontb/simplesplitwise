@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 class SWAddBillModel {
-    fileprivate var billData = SWBillData()
+    var billData = SWBillData()
     var group: SWGroupData!
     var dataSource = [SWBillValueData]()
     let dataSourceSignal = PublishSubject<SWBillData>()
@@ -106,5 +106,9 @@ class SWAddBillModel {
         self.billData.amountDetail = billValue
         self.billData.groupId = self.group.groupId
         return self.billData
+    }
+    
+    func setBill(_ data: SWBillData) {
+        self.billData = data
     }
 }

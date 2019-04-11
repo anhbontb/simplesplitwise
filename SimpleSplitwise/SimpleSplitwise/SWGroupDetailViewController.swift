@@ -22,8 +22,7 @@ class SWGroupDetailViewController: SWBaseViewController {
         super.viewDidLoad()
         self.setupEvent()
         self.showGroupInfo()
-        self.model.loadData()
-        
+        self.model.loadData()        
     }
     
     func setupEvent() {
@@ -103,13 +102,20 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 1 {
+            let info = model.dataSource[indexPath.row]
+            guard let detail = SWBillDetailHistoryViewController.detailView(bill: info) else {
+                return
+            }            
+            self.navigationController?.pushViewController(detail, animated: true)
             return
         }
+        
         let controller = SWMemberDetailViewController()
         let member = model.membersDetail[indexPath.row]
         controller.set(groupBill: self.model.dataSource, member: member.name)
         controller.title = "\(member.name) amount \(member.amount)"
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
 
 }

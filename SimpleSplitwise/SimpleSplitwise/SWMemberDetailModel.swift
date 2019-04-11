@@ -37,6 +37,7 @@ class SWMemberDetailModel {
             let memberBill = SWMemberDetailData()
             memberBill.billDescription = "total: \(info.amount) - \(info.paider ?? "") paid - \(info.billDescription ?? "") - \(info.date)"
             memberBill.amount = String(amount)
+            memberBill.bill = info
             return memberBill
         })
         

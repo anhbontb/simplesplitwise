@@ -83,12 +83,15 @@ class SWAddBillViewController: SWBaseViewController {
         guard let datePicker = self.txtDate.inputView as? UIDatePicker else {
             return
         }
-        
+        self.model.selectedDate(datePicker.date)
+        showDate(datePicker.date)
+    }
+    
+    func showDate(_ date: Date) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        let date = formatter.string(from: datePicker.date)
-        self.model.selectedDate(datePicker.date)
-        self.btnDate.setTitle(date, for: .normal)
+        let dateString = formatter.string(from: date)
+        self.btnDate.setTitle(dateString, for: .normal)
         self.txtDate.resignFirstResponder()
     }
     
@@ -150,24 +153,6 @@ class SWAddBillViewController: SWBaseViewController {
         
         return true
     }
-}
-
-extension SWAddBillViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.dataSource.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = SWBillValueCell.defaultCell(for: tableView)
-        let index = indexPath.row
-        let info = model.dataSource[index]
-        setup(cell: cell, data: info, index: indexPath.row)
-        return cell
-    }
     
     func setup(cell: SWBillValueCell, data info: SWBillValueData, index: Int) {
         cell.lbName.text = info.name
@@ -200,4 +185,24 @@ extension SWAddBillViewController: UITableViewDataSource, UITableViewDelegate {
                 self?.model.update(amount: text ?? "", index: index)
             }).disposed(by: bag)
     }
+}
+
+extension SWAddBillViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = SWBillValueCell.defaultCell(for: tableView)
+        let index = indexPath.row
+        let info = model.dataSource[index]
+        setup(cell: cell, data: info, index: indexPath.row)
+        return cell
+    }
+    
+    
 }

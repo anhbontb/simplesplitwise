@@ -64,6 +64,11 @@ extension SWMemberDetailViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let info = model.dataSource[indexPath.row].bill,
+            let detail = SWBillDetailHistoryViewController.detailView(bill: info )  {
+            self.navigationController?.pushViewController(detail, animated: true)
+        }
     } 
 }
 

@@ -66,7 +66,7 @@ extension SWAllGroupsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detail = UIStoryboard.currentStoryboard()?.viewController("DetailViewController") as? SWGroupDetailViewController else {
             return
-        }
+        }        
         detail.setGroup(model.dataSource[indexPath.row])
         self.navigationController?.pushViewController(detail, animated: true)        
     }

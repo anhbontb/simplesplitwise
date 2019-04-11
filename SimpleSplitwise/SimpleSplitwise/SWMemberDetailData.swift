@@ -11,4 +11,5 @@ import Foundation
 class SWMemberDetailData {
     var amount: String!
     var billDescription: String!
+    var bill: SWBillData!
 }
