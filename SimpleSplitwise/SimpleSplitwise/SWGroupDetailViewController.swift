@@ -70,7 +70,7 @@ extension SWGroupDetailViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = UIColor.white
-        label.text = section == 0 ? " Members" : " Bills"
+        label.text = section == 0 ? "   Splitwise" : "   Bills"
         return label
     }
     

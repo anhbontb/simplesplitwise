@@ -29,14 +29,14 @@ class SWAllGroupsModel {
             group.members = groupInfo.groupMembers.compactMap({$0})
             return group
         }
-        self.dataSource = dataSource
+        self.dataSource = dataSource.reversed()
         self.dataSourceSignal.onNext(self.dataSource)
     }
     
     func add(group: SWGroupData) {
         
         let groupInfo = SWGroupInfo()
-        groupInfo.groupId = Int64(Date().timeIntervalSince1970)
+        groupInfo.groupId = group.groupId
         groupInfo.groupName = group.name
         groupInfo.groupDescription = group.description
         if let members = group.members?.toList() {

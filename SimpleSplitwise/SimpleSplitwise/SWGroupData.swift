@@ -16,6 +16,7 @@ class SWGroupData {
     
     convenience init(name: String, description: String, members: [String]?) {
         self.init()
+        self.groupId = Int64(Date().timeIntervalSince1970)
         self.name = name
         self.description = description
         self.members = members

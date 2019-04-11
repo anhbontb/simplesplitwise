@@ -28,14 +28,15 @@ class SWBillValueCell: UITableViewCell {
         self.contentView.addSubview(txtValue)
         
         lbName.snp.makeConstraints { (make) in
-            make.left.equalTo(5)
+            make.left.equalTo(15)
             make.top.bottom.equalTo(0)
             make.right.equalTo(self.contentView.snp.centerX)
         }
         
         txtValue.textAlignment = .right
+        txtValue.keyboardType = .numberPad
         txtValue.snp.makeConstraints { (make) in
-            make.right.equalTo(-5)
+            make.right.equalTo(-15)
             make.top.bottom.equalTo(0)
             make.left.equalTo(self.contentView.snp.centerX)
         }

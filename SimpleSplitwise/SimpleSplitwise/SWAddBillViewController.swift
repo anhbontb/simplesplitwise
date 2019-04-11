@@ -164,27 +164,39 @@ extension SWAddBillViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = SWBillValueCell.defaultCell(for: tableView)
         let index = indexPath.row
         let info = model.dataSource[index]
+        setup(cell: cell, data: info, index: indexPath.row)
+        return cell
+    }
+    
+    func setup(cell: SWBillValueCell, data info: SWBillValueData, index: Int) {
         cell.lbName.text = info.name
-        
         info.value
             .asObserver()
             .distinctUntilChanged()
-            .map({String($0)})
+            .filter({ (_) -> Bool in return !cell.txtValue.isEditing})
+            .map({ (value) -> String in
+                return value <= 0 ? "0" : String(value)
+            })
             .bind(to: cell.txtValue.rx.text)
             .disposed(by: bag)
         
-        
+        weak var weakCell = cell
         cell.txtValue
             .rx
             .text
             .changed
+            .throttle(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .throttle(0.8, scheduler: MainScheduler.instance)
             .debug()
-            .subscribe(onNext: {[weak self](text) in
+            .subscribe(onNext: { [weak self] (text) in
+                let amount = Float(self?.txtAmount.text ?? "") ?? 0
+                let input = Float(text ?? "") ?? 0
+                if (input > amount) {
+                    self?.alert("Input value is greater than total amount")
+                    weakCell?.txtValue.text = "0"
+                    return
+                }
                 self?.model.update(amount: text ?? "", index: index)
-            })
-            .disposed(by: bag)
-        return cell
-    }    
+            }).disposed(by: bag)
+    }
 }
