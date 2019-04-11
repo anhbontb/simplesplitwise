@@ -17,6 +17,7 @@ class SWAddBillModel {
 
     func selectPaider(_ friend: SWFriendPickerData) {
         self.billData.paider = friend.name
+        self.billData.members.removeAll { (name) -> Bool in return name == friend.name }
         self.buildDataSource()
     }
     
