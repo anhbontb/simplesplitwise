@@ -87,6 +87,7 @@ class SWAddBillViewController: SWBaseViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         let date = formatter.string(from: datePicker.date)
+        self.model.selectedDate(datePicker.date)
         self.btnDate.setTitle(date, for: .normal)
         self.txtDate.resignFirstResponder()
     }
